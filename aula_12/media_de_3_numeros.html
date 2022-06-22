@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Média</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                font-family:sans-serif
+            }
+            #formulario{
+                height: 300px;
+                width: 300px;
+                background:#DCDCDC;
+                text-align: center;
+                border-radius: 10px;
+            }
+            #formulario div{
+                text-align: center;
+            }
+            input{
+                margin-bottom: 10px;
+            }
+            input[name='submit']{
+                text-align: center;
+            }
+            p{
+                font-weight: bold;
+            }
+            span{
+                font-weight: bold;
+            }
+        </style>
+        <div id="formulario">
+            <p>Média de 3 Números</p>
+            
+            <div>
+                <label for="num_1">1º Número</label>
+                <input type="number" name="num_1" id="num_1">
+
+                </br>
+
+                <label for="num_2">2º Número</label>
+                <input type="number" name="num_2" id="num_2">
+
+                </br>
+
+                <label for="num_3">3º Número</label>
+                <input type="number" name="num_3" id="num_3">
+            </div>
+            <div>
+                <input type="submit" id="botao" onclick="media()" value="Média">
+            </div>
+            <div>
+                Média: <span id="result"></span>
+            </div>
+        </div>
+        <script>
+            function media(){
+                var num_1 = parseInt(document.querySelector('#num_1').value);
+                var num_2 = parseInt(document.querySelector('#num_2').value);
+                var num_3 = parseInt(document.querySelector('#num_3').value);
+                
+                // if(isNaN(num_1)){
+                    
+                // }
+                var media = (num_1 + num_2 +num_3)/3;
+
+                if(isNaN(media)){
+                    media = "Erro</br></br>Tente Novamente</br>";
+                    document.getElementById("result").style.backgroundColor = 'red';
+                    document.getElementById("result").style.color = 'white';
+                }else{
+                    document.getElementById("result").style.backgroundColor = 'transparent';
+                    document.getElementById("result").style.color = 'black';
+                }
+
+                document.getElementById("result").innerHTML = media;
+            }
+        </script>
+    </body>
+</html>

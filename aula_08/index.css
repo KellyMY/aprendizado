@@ -1,0 +1,243 @@
+body{
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.background-home{
+    background-color: #fffdd0;
+}
+
+#capa{
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    width:100%;
+    height: 150px;
+}
+
+nav {
+    background: #fffdd0;
+    padding: 1px;
+    margin:0px;
+}
+
+nav ul{
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    font-weight: bold;
+    border-bottom: 5px solid #808080; 
+    list-style-type: none;
+    /* display: inline-block; */
+    border-radius: 5px 5px 0px 0px;
+    padding:10px;
+}
+
+nav ul li a:hover{
+    background-color: #fedebe;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    border-bottom: 5px solid #fda172;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+#contato{
+    text-align: center;
+    padding:20px;
+    background: yellowgreen;
+    padding-bottom: 35px;
+}
+
+#contato label{
+    margin-top: 10px;
+}
+
+#footer{
+    padding:5px;
+    background:#dcdcdc;
+    /* color: #fff; */
+    text-align: center;
+    overflow: hidden;
+    border:none;
+}
+
+#imagem_visual_1{
+    border:10px solid white;
+    transform:rotate(345deg);
+    background-position:center;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#imagem_visual_direita{
+    border:10px solid white;
+    transform:rotate(45deg);
+    background-position:center;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+.campos-input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    word-wrap: normal;
+}
+
+.campos-input input{
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: 0;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.campos-input input:hover{
+    box-shadow: 5px 5px #006400;
+}
+
+#salvarContato{
+    height: 50px;
+    width: 100px;
+    background: #006400;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px; 
+}
+
+#salvarContato:hover{
+    background-color: #000;
+    box-shadow: 5px 5px #fff;
+}
+
+.link{
+    color: #0E4BEF;
+}
+
+.inline-block{
+    display:inline-block;
+}
+
+.titulo{
+    text-align:center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.quadro-posicao-direita{
+    background:#fce903;
+    display: inline-block;
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px 60px;
+    text-align: left;
+}
+
+.posicao-direita{
+    padding-top: 40px;
+    padding-bottom: 15px;
+    background:lightblue;
+    text-align: right;
+}
+
+.posicao-esquerda{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background:#D3D3D3;
+}
+
+.quadro-posicao-esquerda{
+    background: #008080;
+    display: inline-block;
+    width:60%;
+    margin: 0 auto;
+    padding: 40px 60px;
+}
+
+.texto-principal{
+    text-align:center;
+    font-size: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.quadro-imagem-esquerda{
+    display: inline;
+    width:20%;
+    position: relative;
+    left: 30px;
+}
+
+.quadro-imagem-direita{
+    display: inline;
+    width:20%;
+    position: relative;
+    right: 60px;
+}
+
+.cartao{
+    object-fit: cover;
+}
+
+.imagem{
+    max-width:100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3;
+    transition: all 0.3s;
+    height: 300px;
+    width: 500px;
+}
+.imagem:hover{
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 50%;
+}
+
+.descricao-imagem{
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 50%;
+    z-index: 100000;
+    top:-150px;
+    height:50%;
+}
+
+.descricao-imagem p{
+    color: white;
+}
+.card {
+    height: 300px;
+    width: 500px;
+    overflow: hidden;
+}
+
+.imagem:hover{
+    filter: grayscale(100%);
+    -webkit-transform: scale(1.3); 
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 80%;
+}
+
+.margin-top-bottom{
+    margin: 25px auto;
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+    <head>
+        <title>Breaking</title>
+    </head>
+    <body>
+        <style>
+            .primeiro{
+                background-color: rgb(235, 18, 18);
+                width: 100px;
+            }
+            .fluido{
+                height: 20px;
+                display:inline;
+                filter: grayscale(100%);
+                /* vertical-align: text-top; */
+            }
+
+            .fluido:hover{
+                filter:none;
+            }
+            .title{
+                font-size: 40px;
+                font-weight: 600px;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color: #e12fe1;
+                /* border-bottom : 2px solid #000; */
+                width: 600px;
+            }
+
+            
+
+            @media (min-width: 320px){
+                .title, img{
+                    width: 300px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 400px){
+                .title, img{
+                    width: 380px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 420px){
+                .title, img{
+                    width: 400px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 440px){
+                .title, img{
+                    width: 420px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 460px){
+                .title, img{
+                    width: 440px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 480px){
+                .title, img{
+                    width: 460px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 500px){
+                .title, img{
+                    width: 480px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 520px){
+                .title, img{
+                    width: 500px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 540px){
+                .title, img{
+                    width: 520px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 560px){
+                .title, img{
+                    width: 540px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 580px){
+                .title, img{
+                    width: 560px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 600px){
+                .title, img{
+                    width: 580px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 620px){
+                .title, img{
+                    width: 600px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 640px){
+                .title, img{
+                    width: 620px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 660px){
+                .title, img{
+                    width: 640px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 680px){
+                .title, img{
+                    width: 660px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 700px){
+                .title, .fluido img{
+                    /* width 680 */
+                    width: 340px;
+                }
+                .fluido{
+                    vertical-align: default;
+                }
+            }
+
+            @media (min-width: 720px){
+                .title, .fluido img{
+                    /* 700*/
+                    width: 350px;
+                }
+            }
+
+            @media (min-width: 740px){
+                .title, .fluido img{
+                    /* 720 */
+                    width: 360px;
+                }
+            }
+
+            @media (min-width: 760px){
+                .title, .fluido img{
+                    width: 370px;
+                }
+            }
+
+            @media (min-width: 780px){
+                .title, .fluido img{
+                    width: 380px;
+                }
+            }
+
+            @media (min-width: 800px){
+                .title, .fluido img{
+                    width: 390px;
+                }
+            }
+
+            @media (min-width: 820px){
+                .title, .fluido img{
+                    width: 400px;
+                }
+            }
+
+            @media (min-width: 840px){
+                .title, .fluido img{
+                    width: 410px;
+                }
+            }
+
+            @media (min-width: 860px){
+                .title, .fluido img{
+                    width: 420px;
+                }
+            }
+
+            @media (min-width: 880px){
+                .title, .fluido img{
+                    width: 430px;
+                }
+            }
+
+            @media (min-width: 900px){
+                .title, .fluido img{
+                    width: 440px;
+                }
+            }
+
+            @media (min-width: 920px){
+                .title, .fluido img{
+                    width: 450px;
+                }
+            }
+
+            @media (min-width: 940px){
+                .title, .fluido img{
+                    width: 450px;
+                }
+            }
+
+            @media (min-width: 960px){
+                .title, .fluido img{
+                    width: 460px;
+                }
+                
+            }
+
+            @media (min-width: 980px){
+                .title, .fluido img{
+                    width: 480px;
+                }
+            }
+
+            @media (min-width: 1000px){
+                .title, .fluido img{
+                    width: 490px;
+                }
+            }
+
+            @media (min-width: 1020px){
+                .title, .fluido img{
+                    width: 500px;
+                }
+            }
+
+            @media (min-width: 1040px){
+                .title, .fluido img{
+                    width: 510px;
+                }
+            }
+
+            @media (min-width: 1060px){
+                .title, .fluido img{
+                    width: 520px;
+                }
+            }
+
+            @media (min-width: 1080px){
+                .title, .fluido img{
+                    width: 530px;
+                }
+            }
+
+            @media (min-width: 1100px){
+                .title, .fluido img{
+                    width: 540px;
+                }
+            }
+
+            @media (min-width: 1120px){
+                .title, .fluido img{
+                    width: 550px;
+                }
+            }
+
+            @media (min-width: 1140px){
+                .title, .fluido img{
+                    width: 560px;
+                }
+            }
+
+            @media (min-width: 1160px){
+                .title, .fluido img{
+                    width: 570px;
+                }
+            }
+
+            @media (min-width: 1180px){
+                .title, .fluido img{
+                    width: 580px;
+                }
+            }
+
+            @media (min-width: 1200px){
+                .title, .fluido img{
+                    width: 590px;
+                }
+            }
+
+            @media (min-width: 1220px){
+                .title, .fluido img{
+                    width: 600px;
+                }
+            }
+
+            @media (min-width: 1240px){
+                .title, .fluido img{
+                    width: 610px;
+                }
+            }
+
+            @media (min-width: 1260px){
+                .title, .fluido img{
+                    width: 620px;
+                }
+            }
+
+            @media (min-width: 1280px){
+                .title, .fluido img{
+                    width: 630px;
+                }
+            }
+
+            @media (min-width: 1300px){
+                .title, .fluido img{
+                    width: 640px;
+                }
+            }
+
+            @media (min-width: 1320px){
+                .title, .fluido img{
+                    width: 650px;
+                }
+            }
+
+            @media (min-width: 1340px){
+                .title, .fluido img{
+                    width: 660px;
+                }
+                span{
+                    width: 660px;
+                }
+            }
+            #imagem_1,#imagem_2,span{
+                display: none;
+            }
+            img{
+                cursor: pointer;
+            }
+
+            #imagem_1:checked + label > span, #imagem_2:checked + label > span{
+                display:block;
+                position: relative;
+                /* height: 45px; */
+            }
+            body{
+                background-color: antiquewhite;
+            }
+
+        </style>
+        <p class="title">Paisagens</p>
+        <div id="inline">
+            <div class="fluido" style="display: inline-block;"">
+                <input type="checkbox" id="imagem_1" style="background:green;">
+                <label for="imagem_1"><img src="imagem.jpg"/><span style="background:rgb(209, 209, 209);"><b>Titulo: </b>Parque Estadual Costeiro de NÄ Pali<br><b>Localização:</b> Havai</span></label>
+            </div>
+            <div class="fluido" style="display: inline-block;">
+                <input type="checkbox" id="imagem_2" style="background:greenyellow">
+                <label for="imagem_2"><img src="imagem2.jpg"/><span style="background:rgb(209, 209, 209);"><b>Titulo: </b>Parque Nacional Banff<br><b>Localização:</b> Canadá</span></label>
+            </div>
+        </div>
+        <table>
+
+        </table>
+    </body>
+</hmtl>
