@@ -1,0 +1,20 @@
+Uso do do comando git:
+git push -f origin master
+
+Na tentativa de colocar o seguinte comando e surgindo o seguinte erro:
+$ git push --set-upstream origin main
+To https://github.com/KellyMY/aprendizado.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/KellyMY/aprendizado.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+fazendo os seguintes códigos:
+git fetch --all
+
+git merge main
+
+git push --set-upstream origin main
+
