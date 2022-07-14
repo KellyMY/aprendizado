@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+input, h3, h4{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-header{
+    padding: 0;
+}
+
+.capa{
+    height: 50%;
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+}
+.menu{
+    height: 50px;
+    width: auto;
+}
+
+a{
+    /* top: 50%; */
+    /* vertical-align: center; */
+    text-align: center;
+}
+
+.card-img-top{
+    height: 200px;
+    object-fit: center;
+    margin-top: 5px;
+}
+
+#enviar_contato{
+    width: 100%;
+    text-align: center;
+}
+
+footer{
+    background-color: #D3D3D3;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dark-gray{
+    height: 20%;
+    background-color: #2B2D2F;
+    color: #fff;
+}
+
+.footer-list{
+    height: 30%;
+}
