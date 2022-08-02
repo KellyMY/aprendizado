@@ -11,9 +11,13 @@
     <title>jQuery</title>
 </head>
 <body>
-    <!-- <style>
-        .modal { z-index:999999;}
-    </style> -->
+    <style>
+        /* .modal { z-index:999999;} */
+
+        .invalid{
+            border: 1px solid red;
+        }
+    </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="assets/images/header-logo.png" alt=""></a>
@@ -33,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link nav-modal-open" href="about.html" rel="sobre">Sobre nós</a>
                     </li>
-                    <li class="nav-item nav-modal-open">
+                    <li class="nav-item">
                         <a class="nav-link nav-modal-open" href="contact.html" rel="contato">Contato</a>
                     </li>
                 </ul>
@@ -217,9 +221,22 @@
         <div id="contato" class="visually-hidden">
             <form action="">
                 <div class="mb-3">
-                    <label for="nome" class="form-label"></label>
-                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted">digite um nome valido</small>
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" aria-describedby="helpId">
+                        <small class="text-muted">digite um NOME valido</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome" class="form-label">CPF</label>
+                        <input type="text" name="cpf" id="cpf" class="form-control cpf" placeholder="Digite seu cpf" aria-describedby="helpId">
+                        <small class="text-muted">digite um CPF valido</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome" class="form-label">CEP</label>
+                        <input type="text" name="cep" id="cep" class="form-control cep" placeholder="Digite seu cep" aria-describedby="helpId">
+                        <small class="text-muted">digite um CEP valido</small>
+                    </div>
                 </div>
             </form>
         </div>
@@ -234,21 +251,37 @@
         <script src="./js/custom.js"></script>
         <script>
             $(document).ready(function(){
+
+                $('body').on('blur', '#nome', function(){
+                    validate($(this));
+                });
+
+                $('body').on('blur', '#cpf', function(){
+                    $(".cpf").mask('000.000.000-00',{reverse: false});
+                    validate($(this));                    
+                });
+
+                $('body').on('blur', '#cep', function(){
+                    $(".cep").mask('00000-000');
+                    validate($(this));                    
+                });
+                
+                $('.text-muted').hide();
                 
                 $(".nav-modal-open").click(function(e){
                     e.preventDefault(); // controla o que será realizado na ação do botão
                     
                     let element = $(this).attr('rel');
                     $('.modal-body').html($('#'+element).html());
+                    console.log('isufhsd')
                     let myModal = new bootstrap.Modal($('#modelId'));
                     myModal.show();
                     
                 });
 
-                $('.btn-close').click(function(){
-                    console.log('jfdis')
-                    $(this).find(".modal-backdrop").removeClass("show");
-                });
+                // $('.btn-close').click(function(){
+                //     $(this).find(".modal-backdrop").removeClass("show");
+                // });
 
                 $('#form').on('submit', function(e){
                     e.preventDefault();
@@ -263,11 +296,28 @@
                     }
                 });
 
-                $(".cpf").mask('000.000.000-00',{reverse: true});
-
-                $(".cep").mask('00000-000');
                 
-            })
+                // $(document).on('click', ".btn-close", function(){
+                //     $('.modal-backdrop')
+                // })
+                
+
+                
+                
+            });
+
+            function validate(elem){
+                if(elem.val() == ""){console.log(elem.next())
+                    elem.next().show();
+                    elem.addClass('invalid');
+                    return false;
+                }else{
+                    elem.removeClass('invalid');
+                    elem.next().hide();
+                    return true;
+                }
+                
+            }
         </script>
     </body>
     </html>
