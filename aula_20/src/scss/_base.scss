@@ -1,0 +1,28 @@
+$color-background: "#ADD8E6";
+$font-family-title: "Oleo Script Swash Caps";
+$font-family-description: "Montserrat";
+$font-family-text: "Poppins";
+
+$font-size-title: 24px;
+$font-size-description: 16px;
+$font-size-text: 12px;
+
+body{
+    width:100%;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: $font-family-title;
+}
+
+p, span{
+    font-family: $font-family-text;
+    font-size: $font-size-text;
+}
+.description{
+    font-family: $font-family-description;
+    font-size: $font-size-description
+}
+section{
+    padding: 20px;
+}
