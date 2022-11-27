@@ -1,0 +1,16 @@
+body{
+    background-image: url("./background.jpg");
+    background-size: 15px;
+
+}
+div{
+    
+    background: url("./background.jpg");
+}
+span{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
