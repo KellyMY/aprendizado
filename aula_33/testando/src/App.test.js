@@ -4,8 +4,7 @@ import React from "react";
 import '@testing-library/jest-dom';
 
 test('teste titulo', () => {
-  console.log('test')
-  render(<App />);
+  render(<App/>);
   const testCase = document.querySelector('.App h1');
   expect(testCase).toHaveTextContent(/meu painel de controle/i);
 });
