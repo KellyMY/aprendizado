@@ -1,4 +1,6 @@
-./aula_19/node-modules/**
+./python_arquivo/modulo_9/node_modules*
+
+./aula_19/node_modules/**
 
 ./aula_21 - parte I/node-modules/**
 aula_22/node_modules*
