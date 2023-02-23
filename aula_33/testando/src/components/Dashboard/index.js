@@ -21,7 +21,7 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
-import Alert from './../Alerts'
+import Alerts from '../Alerts';
 
 function Copyright(props) {
   return (
@@ -173,7 +173,7 @@ function DashboardContent(props) {
                     height: 240,
                   }}
                 >
-                  <Alert type="success">Alerta de algo!!</Alert>
+                  <Alerts type="warning" >Gráfico atualizado</Alerts>
                   <Chart />
                 </Paper>
               </Grid>
@@ -206,5 +206,5 @@ function DashboardContent(props) {
 }
 
 export default function Dashboard(props) {
-  return <DashboardContent title={props.title}/>;
+  return <DashboardContent title={props.title} />;
 }
