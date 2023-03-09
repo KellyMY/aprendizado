@@ -22,17 +22,31 @@ def extract_movie_details(movie_link):
     if movie_soup is not None:
         title = None
         date = None
+        movie_data = movie_soup.find('title')
+        # movie_data = movie_soup.find('div', attrs={'class': 'title_wrapper'})
+        # if movie_data is not None:
+        #     title = movie_data.find('h1').get_text()
+        #     date = movie_data.find('a', attrs={'title': 'See more release dates'}).get_text().strip()
 
-        movie_data = movie_soup.find('div', attrs={'class': 'title_wrapper'})
-        if movie_data is not None:
-            title = movie_data.find('h1').get_text()
-            date = movie_data.find('a', attrs={'title': 'See more release dates'}).get_text().strip()
+        # rating = movie_soup.find('span', attrs={'itemprop': 'ratingValue'}).get_text() if movie_soup.find(
+        #     'span', attrs={'itemprop': 'ratingValue'}) else None
 
-        rating = movie_soup.find('span', attrs={'itemprop': 'ratingValue'}).get_text() if movie_soup.find(
-            'span', attrs={'itemprop': 'ratingValue'}) else None
+        # plot_text = movie_soup.find('div', attrs={'class': 'summary_text'}).get_text().strip() if movie_soup.find(
+        #     'div', attrs={'class': 'summary_text'}) else None
+# movie_data = movie_soup.find('title')
+        # if movie_data is not None:
+        title = movie_soup.find('h1').get_text().strip()
+        date = movie_soup.find('div', attrs={'data-testid': 'tm-box-up-date'}).get_text().strip()
+            # date = movie_data.find('a', attrs={'title': 'See more release dates'}).get_text().strip()
+        rating = movie_soup.find("div", attrs={'data-testid':'hero-rating-bar__popularity__score'}).get_text().strip()
+        # rating = movie_soup.find('span', attrs={'itemprop': 'ratingValue'}).get_text() if movie_soup.find(
+        #     'span', attrs={'itemprop': 'ratingValue'}) else None
+        # plot_text = movie_soup.find("span", attrs={"class":"sc-35061649-1"}).get_text().strip()
+        
 
-        plot_text = movie_soup.find('div', attrs={'class': 'summary_text'}).get_text().strip() if movie_soup.find(
-            'div', attrs={'class': 'summary_text'}) else None
+
+
+        plot_text = movie_soup.find("span", attrs={"data-testid":"plot-xl"}).get_text().strip()
 
         with open('movies.csv', mode='a') as file:
             movie_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -45,21 +59,50 @@ def extract_movies(soup):
     movies_table = soup.find('table', attrs={'data-caller-name': 'chart-moviemeter'}).find('tbody')
     movies_table_rows = movies_table.find_all('tr')
     movie_links = ['https://imdb.com' + movie.find('a')['href'] for movie in movies_table_rows]
-    
+    # exit(movie_links)
     threads = min(MAX_THREADS, len(movie_links))
     
     
 
     movie_link = "https://imdb.com/title/tt4873118/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e9101d6a-9cbe-4310-a9f9-38e3776597d5&pf_rd_r=FV3D4TSPDET8X16CZCG8&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=moviemeter&ref_=chtmvm_tt_100"
+    # movie_link = "https://imdb.com/title/tt8041270/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e9101d6a-9cbe-4310-a9f9-38e3776597d5&pf_rd_r=4EBFKB26QPAWSF1FTJWT&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=moviemeter&ref_=chtmvm_tt_85"
     response = BeautifulSoup(requests.get(movie_link, headers=headers).content, 'html.parser')
     movie_soup = response
-    
+    # exit(movie_soup)
     if movie_soup is not None:
+        # exit(movie_soup.find('title'))
         title = None
         date = None
+        movie_data = movie_soup.find('title')
 
-        movie_data = movie_soup.find('div', attrs={'class': 'title_wrapper'})
-    exit
+        with open('movies.csv', mode='w') as file:
+            file.write('titulo,data,avaliacao,sumario\n')
+        # funciona
+        # if movie_data is not None:
+        #     title = movie_soup.find('h1').get_text().strip()
+        #     date = movie_soup.find('div', attrs={'data-testid': 'tm-box-up-date'}).get_text().strip()
+        #     # date = movie_data.find('a', attrs={'title': 'See more release dates'}).get_text().strip()
+        # rating = movie_soup.find("div", attrs={'data-testid':'hero-rating-bar__popularity__score'}).get_text().strip()
+        # # rating = movie_soup.find('span', attrs={'itemprop': 'ratingValue'}).get_text() if movie_soup.find(
+        # #     'span', attrs={'itemprop': 'ratingValue'}) else None
+        # # exit( movie_soup.find("span", attrs={"class":"sc-35061649-1"}).get_text().strip())
+        # plot_text = movie_soup.find("span", attrs={"data-testid":"plot-xl"}).get_text().strip()
+        # # plot_text = 'xxx'
+        # # plot_text = movie_soup.find('div', attrs={'class': 'summary_text'}).get_text().strip() if movie_soup.find(
+        # #     'div', attrs={'class': 'summary_text'}) else None
+        # # movie_data = movie_soup.find('div', attrs={'class': 'title_wrapper'})
+        # with open('movies.csv', mode='a') as file:
+        #     movie_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        #     print(title)
+        #     print(date)
+        #     print(rating)
+        #     print(plot_text)
+        #     if all([title, date, rating, plot_text]):
+        #         # exit('sss')
+        #         print(title, date, rating, plot_text)
+        #         movie_writer.writerow([title, date, rating, plot_text])
+        # exit('fim')
+    # exit('tttttt')
     i = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
         # extract_movie_details(movie_links)
@@ -76,7 +119,7 @@ def main():
     popular_movies_url = 'https://www.imdb.com/chart/moviemeter/?ref_=nv_mv_mpm'
     response = requests.get(popular_movies_url, headers=headers)
     soup = BeautifulSoup(response.content, 'html.parser')
-    # exit(response)
+    # exit(soup)
     # Main function to extract the 100 movies from IMDB Most Popular Movies
     extract_movies(soup)
 
